@@ -1,0 +1,19 @@
+<ion-view view-title="IoT Homy {{conn}} - {{broker}}">
+	
+  <ion-content class="has-header">
+    <ion-refresher on-refresh="doRefresh()"></ion-refresher>	  
+	
+	<div class="item item-divider">
+        Detected devices:
+    </div>
+    
+    <ion-list>
+      <ion-item class="item-icon-right" ng-repeat="dev in all_devices" href="#/app/iotdevices/{{dev.type}}">
+        {{dev.title_type}}  <span class="badge badge-assertive">{{dev.count}}</span>
+          <i class="icon ion-chevron-right icon-accessory"></i>
+      </ion-item>
+    </ion-list>   
+     
+  </ion-content>
+  
+</ion-view>

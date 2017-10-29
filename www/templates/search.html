@@ -1,0 +1,17 @@
+<ion-view view-title="Search">
+  <ion-content>
+    <h1>State: {{connected}}</h1>
+    <div  ng-controller="ContentCtrl as controller">      
+<!--      <ion-list>        
+        <ion-item ng-model="msg_cata.msg"> {{msg_cata.msg}}   </ion-item>    
+      </ion-list>
+-->
+        
+ <ion-list>
+       <ion-item  ng-repeat="x in to_view" > {{x.msg}}   </ion-item> 
+  </ion-list>        
+             
+    </div>  
+  </ion-content>
+  
+</ion-view>

@@ -1,0 +1,48 @@
+
+<ion-header-bar align-title="center" class="bar-positive">
+  <div class="buttons">
+    <a class="button"  href="#/app/iotdevices/{{my_device_info.type}}">Back</a>   
+  </div>
+  
+  <h1 class="title">{{my_device_info.device_alias}}</h1>
+  
+  <div class="buttons">
+    <a class="button"  href="#/app/iotdevices/cron/{{my_device_info.type}}/{{my_device_info.device_name}}/">New cron</a> 
+  </div>   
+</ion-header-bar>
+
+
+
+ <ion-view view-title="Back"> 
+
+
+  <ion-nav-bar class="bar-positive">
+      <ion-nav-back-button class="button-clear"> 
+		  <i class="ion-arrow-left-c"></i> Backu
+      </ion-nav-back-button>
+  </ion-nav-bar>
+
+  <ion-tabs class="tabs-positive tabs-icon-top">
+     
+     <ion-tab title="Device" icon-on="ion-ios-toggle" icon-off="ion-ios-toggle-outline">
+
+        <ion-content>
+		  <ion-refresher on-refresh="doRefresh()"></ion-refresher>	 
+          <BR><BR>
+          <ion-list>
+            <ion-toggle ng-hide="hidePlug" ng-repeat="item in my_dev" ng-model="item.checked" ng-change="updatePlug(item);">{{item.device_alias}}</ion-toggle>           
+          </ion-list>      
+           <BR><BR> 
+           
+         </ion-content>            
+     </ion-tab>
+     
+     <ion-tab title="Info" icon-on="ion-ios-gear" icon-off="ion-ios-gear-outline">
+        <ion-view>
+          <div ng-include src="'templates/tab_detail.html'"></div>
+        </ion-view>
+     </ion-tab>
+  </ion-tabs>
+  
+</ion-view> 
+

@@ -1,0 +1,39 @@
+<ion-view view-title="Debug  {{conn}}">
+  <ion-content>
+    <!-- <div ng-controller ="MQTTConnectCtrl" ><h1>State: {{getConnectionState();}}</h1></div>  -->
+<!--    <div ng-controller="Debug2Ctrl">  
+	   ALL:
+	   <ul>
+        <li ng-repeat="msg in my_dev">{{msg}}</li>
+      </ul> 
+	</div>
+	cata: {{cata2}}
+
+    
+    <div ng-controller="DebugCtrl as controller">      -->	
+		
+ALL: {{devs}}
+<BR>
+<BR>
+UL:
+	   <ul>
+        <li ng-repeat="msg in devs.devices track by $index">{{msg.device_name}} {{msg.type}}</li>
+      </ul>        
+     
+<!-- DEBUG
+       <ul>
+        <li ng-repeat="msg in messages">{{msg}}</li>
+      </ul> 
+      <br>
+    
+      DTH: {{dth.length}} OBJ: {{dth}}<br><br>
+      IRRITOOL: {{irritool.length}} OBJ: {{irritool}}<BR> <br>
+      PLUG: {{plug.length}} OBJ: {{plug}}<BR><br>
+      
+      cata: {{cata}}
+-->  
+
+ 
+  </ion-content>
+  
+</ion-view>

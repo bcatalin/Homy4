@@ -1,0 +1,17 @@
+{
+  "name": "Homy3",
+  "app_id": "",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic1",
+  "watchPatterns": [],
+
+  "proxies": [
+    {
+      "path": "/login",
+      "proxyUrl": "http://iotcentral.eu/login"
+    }
+  ]
+
+}

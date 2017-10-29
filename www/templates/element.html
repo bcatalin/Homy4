@@ -1,0 +1,24 @@
+<ion-view view-title={{data_name}}>
+  
+  
+  <ion-content>
+	  myValue: {{myValue}}
+	  
+    <ion-refresher on-refresh="doRefresh()"></ion-refresher>
+
+     {{dev_types}}
+      
+
+    
+      <ion-list >
+       <ion-toggle ng-hide="hidePlug" ng-repeat="item in dd" ng-model="item.checked" ng-change="updatePlug(item);">{{ item.device_name }}</ion-toggle>           
+       </ion-list>
+
+	 <ion-list ng-hide="hideSensor">
+      <ion-item ng-repeat="item in dth" ">
+        {{item.device_name}}: Temperature: <span class="badge badge-assertive">{{item.temperature}}</span>
+      </ion-item>
+    </ion-list>     
+      
+  </ion-content>
+</ion-view>

@@ -1,0 +1,79 @@
+<ion-view view-title="Device details">
+  
+
+  <!-- <ion-content> -->
+	  
+    <ion-refresher on-refresh="doRefresh()"></ion-refresher>
+
+<!-- plug -->      
+     <ion-list >
+        <ion-toggle ng-hide="hidePlug" ng-repeat="item in dd" ng-model="item.checked" ng-change="updatePlug(item);">{{ item.device_alias }}</ion-toggle>           
+     </ion-list>
+<!-- irritool -->
+
+      <ion-list >
+       <ion-toggle ng-hide="hideIrritool" ng-repeat="item in ii" ng-model="item.checked" ng-change="updateIrritool(item);">{{ item.device_name }} Time:{{item.time}} V:{{item.valve_id}}</ion-toggle>           
+      </ion-list>
+
+<!-- DTH -->     
+	 <ion-list ng-hide="hideSensor">
+      <ion-item ng-repeat="item in dth" ">
+        Temperature: {{item.temperature}}  Humidity: {{item.humidity}}
+      </ion-item>
+    </ion-list> 
+<!-- DEVICE INFO-->
+ <BR>
+    <span ng-hide="editing" ng-click="editing = true">{{my_device_info.device_alias}}</span><br>
+                  
+      <form ng-show="editing" ng-submit="editing = false; edit(my_device_info.device_alias)" name="form" >
+      <label>Enter an alias name:</label>
+         <input type="text" ng-model="my_device_info.device_alias" placeholder="Enter an alias name:" ng-required/>
+         <button class="btn" type="submit">Save alias</button>             
+      </form>
+ <BR><BR>
+
+ <div class="row">
+  <div class="col">Index</div>
+  <div class="col">Minute</div>
+  <div class="col">Hour</div>
+  <div class="col">Dom</div>
+  <div class="col">Month</div>
+  <div class="col">Day of week</div>
+  <div class="col">Valve</div>
+  <div class="col">Duration</div>
+  <div class="col">State</div>
+  <div class="col">Skip</div>
+  <div class="col">Action</div>
+ </div>
+
+<!-- {{my_cronrecord_info.cronrecord.i}} -->
+ <ion-item ng-repeat="dev in my_cronrecord_info.cronrecord" href="#/app/iotdevices/cron/{{my_cronrecord_info.device_type}}/{{my_cronrecord_info.device_name}}/1">
+  <div class="row">
+    <div class="col">{{dev.i}}</div>
+    <div class="col">{{dev.m}}</div>
+    <div class="col">{{dev.h}}</div>
+    <div class="col">{{dev.dom}}</div>
+    <div class="col">{{dev.M}}</div>
+    <div class="col">{{dev.dow}}</div>
+    <div class="col">{{dev.vid}}</div>
+    <div class="col">{{dev.d}}</div>
+    <div class="col">{{dev.S}}</div>
+    <div class="col">{{dev.s}}</div>
+    <div class="col">
+	   <button class="button button-small button-assertive">
+       Edit
+      </button>
+    </div>
+  </div>
+ </ion-item>
+
+    IP Address:  {{my_device_info.ipaddress}}<BR>
+    Network Type(B=1/G=2/N=3): {{my_device_info.bgn}}<BR>
+    Device up time: {{my_device_info.uptime}} min<BR>
+    Version: {{my_device_info.version}}<BR>
+    SDK: {{my_device_info.sdk}}<BR>
+    CRON: {{my_cronrecord_info.cron_records}} 
+</ion-content> 
+  
+
+</ion-view>

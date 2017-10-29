@@ -1,0 +1,10 @@
+<ion-view view-title="Devices {{conn}}">
+  <ion-content>
+	<ion-refresher on-refresh="doRefresh()"></ion-refresher>
+    <ion-list>
+      <ion-item ng-repeat="element in elements" href="#/app/elements/{{element.type}}">
+        {{element.type}} <span class="badge badge-assertive">{{element.count}}</span>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

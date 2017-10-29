@@ -1,0 +1,56 @@
+<!-- <ion-view view-title="Settings">
+  <ion-content>
+-->   
+
+<BR><BR><BR>
+
+<!--	
+  </ion-content>
+</ion-view>
+-->
+<ion-view view-title="Settings" name="login-view">
+  <ion-content class="padding">
+<!-- Local broker --->
+      <div class="list list-inset">
+          <label class="item item-input">
+              <input type="text" placeholder="Local broker name (or its IP address)" ng-model="data.host">
+          </label>
+
+          <label class="item item-input">
+              <input type="text" placeholder="Port (ex: 9001)" ng-model="data.port">
+          </label>
+          <label class="item item-input">
+              <input type="text" placeholder="Local broker username" ng-model="data.user">
+          </label>
+          <label class="item item-input">
+              <input type="text" placeholder="Local broker password" ng-model="data.pass">
+          </label>          
+          <div class="list">
+              <ion-checkbox ng-model="data.checked" ng-checked="data.checked"> Broker support SSL </ion-checkbox>	     
+          </div>                          
+      </div>
+<!-- Cloud broker --->
+      <div class="list list-inset">
+          <label class="item item-input">
+              <input type="text" placeholder="Local broker name (or its IP address)" ng-model="data.cloud_host">
+          </label>
+
+          <label class="item item-input">
+              <input type="text" placeholder="Port (ex: 9001)" ng-model="data.cloud_port">
+          </label>
+          <label class="item item-input">
+              <input type="text" placeholder="Cloud broker username" ng-model="data.cloud_user">
+          </label>
+          <label class="item item-input">
+              <input type="text" placeholder="Cloud broker password" ng-model="data.cloud_pass">
+          </label>                    
+          <div class="list">
+              <ion-checkbox ng-model="data.cloud_checked" ng-checked="data.cloud_checked"> Remote broker support SSL </ion-checkbox>	     
+          </div>                          
+      </div>
+<!-- Save data --->
+      <button class="button button-block button-calm" ng-click="save()">Save data</button>
+
+      
+  </ion-content>
+</ion-view>

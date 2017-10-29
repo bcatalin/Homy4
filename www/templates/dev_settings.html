@@ -1,0 +1,97 @@
+<!--
+<ion-view view-title="Device settings">
+        <ion-content class="padding">
+-->
+<!--
+<div class="modal">
+
+   
+    <ion-header-bar class="bar-secondary">
+      <h1 class="title">New alias</h1>
+      <button class="button button-clear button-positive" ng-click="closeDeviceAlias()">Cancel</button>
+    </ion-header-bar>
+
+   
+    <ion-content>
+
+      <form name="form" ng-submit="saveAlias(dev_alias)" ng-model="form">
+        <div class="list">
+          <label class="item item-input">
+            <input type="text" placeholder="Enter an alias name"  name="description" ng-model="description" >
+          </label>
+        </div>
+        <div class="padding">
+          <button type="submit" class="button button-block button-positive">Save settings</button>
+        </div>
+      </form>
+
+    </ion-content>
+
+  </div>
+-->
+
+
+  <div class="modal">
+ <BR><BR> 
+<BR>
+    <div class="bar bar-header bar-positive">
+        <ion-button class="button icon-left ion-chevron-left button-clear" ng-click="leaveAddChangeDialog()">Cancel</ion-button>
+  		<h1 class="title">Edit alias</h1>
+	</div>
+    <ion-content has-header="true">
+		<form name="form" ng-model="form">
+			<BR><BR>
+			<ion-list>
+				  <li class="item item-input item-stacked-label">
+				  	<span class="input-label">New alias name:</span>
+				    <input type="text" placeholder="" name="description" ng-model="description" required />					
+				  </li>
+				  
+
+				<ion-button ng-show="action == 'change'" class="button button-block button-positive" ng-click="editItem(form)">
+		  				Save 
+				</ion-button>
+			</ion-list>
+		</form>
+    </ion-content>
+    
+  </div>
+
+
+<!--
+
+<form ng-submit="edit(dev_alias)">
+  <div class="list">
+    <label class="item item-input">
+      <input type="text" placeholder="Enter an alias name" ng-model="dev_alias.alias">
+   </label>
+
+   <label class="item item-input">
+      <textarea placeholder="Comments" ng-model="dev_alias.comments"></textarea>
+   </label>
+  <button type="submit" class="button button-block button-positive">Save settings</button>
+  </div>
+</form>
+
+<br>
+
+   <form ng-submit="createTask(task)">
+        <div class="list">
+          <label class="item item-input">
+            <input type="text" placeholder="What do you need to do?" ng-model="task.title">
+          </label>
+        </div>
+        <div class="padding">
+          <button type="submit" class="button button-block button-positive">Create Task</button>
+        </div>
+      </form>
+
+
+          <p>
+            <a class="button icon ion-home" href="#/tab/home"> Save</a>
+            <a class="button icon icon-left ion-chevron-left" href="#/tab/facts2">More Facts</a>
+          </p>
+        </ion-content>
+       
+ </ion-view>
+--> 

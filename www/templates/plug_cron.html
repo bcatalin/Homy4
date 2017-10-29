@@ -1,0 +1,140 @@
+<ion-view view-title="CRON details">
+  <ion-nav-bar class="bar-positive">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+  </ion-nav-bar>
+
+  <ion-content class="has-header">
+	  
+   <form name="cron">  
+    <div class="list">
+
+<!-- Hour -->
+     <div class="item range range-positive">
+       <div class="input-label">  Hour </div> 
+       0 <input required type="range" ng-model="my_cronrecord_info.cronrecord.h" name="hour" min="0" max="23" value="30"> 23 Value: {{my_cronrecord_info.cronrecord.h}}  
+     </div> 
+<!-- Minute -->
+     <div class="item range range-positive">
+       <div class="input-label">  Minute </div> 
+       0 <input required type="range" ng-model="my_cronrecord_info.cronrecord.m" name="minute" min="0" max="59" value="30"> 59 Value: {{my_cronrecord_info.cronrecord.m}}  
+     </div> 
+          
+<!-- duration -->  
+    <div class="item range range-positive"> 
+       <div class="input-label">  Duration </div> 
+       0 <input required type="range" ng-model="my_cronrecord_info.cronrecord.d" name="duration" min="0" max="400" value="10"> 400 Value: {{my_cronrecord_info.cronrecord.d}}  
+    </div> 
+    
+    
+<!-- Month -->
+     <label class="item item-input item-select">
+      <div class="input-label">
+         Month
+      </div>
+      <select required name="month" ng-model="my_cronrecord_info.cronrecord.M">
+        <option selected  value="*">Every month</option>
+        <option value="1">January</option>
+        <option value="2">February</option>
+        <option value="3">March</option>
+        <option value="4">April</option>
+        <option value="5">May</option>
+        <option value="6">June</option>
+        <option value="7">July</option>
+        <option value="8">August</option>
+        <option value="9">September</option>
+        <option value="10">October</option>
+        <option value="11">November</option>
+        <option value="12">December</option>
+      </select>
+     </label>
+     
+<!-- Day of the week -->
+     <label class="item item-input item-select">
+      <div class="input-label">
+         Day of week
+      </div>
+      <select required name="dow" ng-model="my_cronrecord_info.cronrecord.dow">
+        <option selected value="*">Every day</option>
+        <option value="1">Monday</option>
+        <option value="2">Tuesday</option>
+        <option value="3">Wednesday</option>
+        <option value="4">Thursday</option>
+        <option value="5">Friday</option>
+        <option value="6">Saturday</option>
+        <option value="7">Sunday</option>
+        <option>Sunday</option>
+      </select>
+     </label>    
+    <!-- Day of the month -->
+     <label class="item item-input item-select">
+      <div class="input-label">
+         Day of month
+      </div>
+      <select required name="dom" ng-model="my_cronrecord_info.cronrecord.dom">
+        <option value="*" selected>Every day</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15">15</option>
+        <option value="16">16</option>
+        <option value="17">17</option>
+        <option value="18">18</option>
+        <option value="19">19</option>
+        <option value="20">20</option>
+        <option value="21">21</option>
+        <option value="22">22</option>
+        <option value="23">23</option>
+        <option value="24">24</option>
+        <option value="25">25</option>
+        <option value="26">26</option>
+        <option value="27">27</option>
+        <option value="28">28</option>
+        <option value="29">29</option>
+        <option value="30">30</option>
+        <option value="31">31</option>
+      </select>
+     </label> 
+<!--     
+     
+      <label class="item item-input item-select">
+        <div class="input-label">
+           Valve
+        </div>
+      <select required name="valve" ng-model="my_cronrecord_info.cronrecord.vid">
+        <option value="0">1</option>
+        <option value="1">2</option>
+        <option value="2">3</option>
+        <option value="3">4</option>
+      </select>
+     </label>  
+-->    
+    <!-- Status -->
+    <ion-toggle ng-model="my_cronrecord_info.cronrecord.checked" ng-change="updateStatus(my_cronrecord_info.cronrecord);" toggle-class="toggle-calm">Status</ion-toggle>
+    
+    <!-- Skip -->
+    <label class="item item-input"> 
+		<span class="input-label">Skip</span>  
+		<input type="number" min="0" max="100" required ng-model="my_cronrecord_info.cronrecord.s"> {{my_cronrecord_info.cronrecord.s}} times
+	</label>
+    
+    <!-- Submit-->
+    <button class="button button-block button-positive" ng-click="doSomething()">
+       Save cron data
+    </button>
+     
+   </form>  
+  </div>
+ </ion-content>
+</ion-view>
